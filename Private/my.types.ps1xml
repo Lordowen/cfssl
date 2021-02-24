@@ -1,0 +1,32 @@
+﻿<Types>
+    <Type>
+        <Name>System.String</Name>
+        <Members>
+            <ScriptProperty>
+                <Name>ToBase64String</Name>
+               <GetScriptBlock>
+                 [System.Convert]::ToBase64String([System.Text.Encoding]::UNICODE.GetBytes($this))
+               </GetScriptBlock>
+             </ScriptProperty>
+             <ScriptProperty>
+               <Name>FromBase64String</Name>
+                <GetScriptBlock>
+                    [System.Text.Encoding]::UNICODE.GetString([System.Convert]::FromBase64String($this))
+              </GetScriptBlock>
+            </ScriptProperty>
+            <ScriptProperty>
+                <Name>ToBase64UTF8</Name>
+               <GetScriptBlock>
+                 [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($this))
+               </GetScriptBlock>
+             </ScriptProperty>
+             <ScriptProperty>
+               <Name>FromBase64UTF8</Name>
+                <GetScriptBlock>
+                    [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($this))
+              </GetScriptBlock>
+            </ScriptProperty>
+        </Members>
+    </Type>
+</Types>
+
